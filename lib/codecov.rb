@@ -73,7 +73,7 @@ class SimpleCov::Formatter::Codecov
         else
           params[:slug] = ENV['CIRCLE_REPOSITORY_URL'].gsub(/^.*:/, '').gsub(/\.git$/, '')
         end
-        params[:pr] = ENV['CIRCLE_PR_NUMBER']
+        params[:pr] = ENV['CIRCLE_PULL_REQUEST'].split('/').last
         params[:branch] = ENV['CIRCLE_BRANCH']
         params[:commit] = ENV['CIRCLE_SHA1']
 
